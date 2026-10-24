@@ -1,0 +1,21 @@
+services:
+  studio:
+    build: .
+    image: open-source-photo-studio:latest
+    ports:
+      - "8931:8931"
+    environment:
+      PORT: "8931"
+      HOST: "0.0.0.0"
+      # 可选：提高 GitHub 接口配额
+      GITHUB_TOKEN: ""
+      # 可选：启用 AI 润色；留空则为无 AI 模式
+      AI_API_KEY: ""
+      AI_BASE_URL: "https://api.openai.com/v1"
+      AI_MODEL: "gpt-4o-mini"
+      SHOT_CONCURRENCY: "2"
+      SHOT_TIMEOUT_MS: "25000"
+      SHOT_MAX_HEIGHT: "3200"
+    # 容器内需要足够内存跑 Chromium
+    shm_size: "1gb"
+    restart: unless-stopped

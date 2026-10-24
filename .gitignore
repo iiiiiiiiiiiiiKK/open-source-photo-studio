@@ -1,0 +1,11 @@
+﻿node_modules
+dist
+dist-static
+.env
+.env.local
+*.log
+.logs
+.artifacts
+shots-out
+*.tsbuildinfo
+.DS_Store

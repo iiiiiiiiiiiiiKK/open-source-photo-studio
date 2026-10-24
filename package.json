@@ -1,0 +1,36 @@
+{
+  "name": "open-source-photo-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "开源项目照相馆 —— 输入 GitHub 仓库或项目官网，自动生成中文介绍、亮点摘要与高质量展示图",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite",
+    "dev:api": "node server/index.mjs",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "start": "node server/index.mjs",
+    "preview": "vite preview",
+    "test:api": "node scripts/test-api.mjs",
+    "test:export": "node scripts/test-export.mjs",
+    "test:ssrf": "node scripts/test-ssrf.mjs",
+    "test:mobile": "node scripts/test-mobile.mjs",
+    "test:layout": "node scripts/layout-audit.mjs",
+    "test:all": "node scripts/test-api.mjs && node scripts/test-ssrf.mjs && node scripts/test-export.mjs && node scripts/test-mobile.mjs && node scripts/layout-audit.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "playwright-core": "^1.49.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}
